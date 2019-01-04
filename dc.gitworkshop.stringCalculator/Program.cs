@@ -36,7 +36,7 @@ namespace dc.gitworkshop.stringCalculator
 
             Console.WriteLine();
             Console.WriteLine("Generator tests:");
-            Test(expected: 0, actual: Generator.Random(0, ",").Split(new []{','}).Length);
+            Test(expected: 1, actual: Generator.Random(0, ",").Split(new []{','}).Length);
             Test(expected: 1, actual: Generator.Random(1, ",").Split(new []{','}).Length);
             Test(expected: 2, actual: Generator.Random(2, ",").Split(new []{','}).Length);
             Test(expected: 10, actual: Generator.Random(10, ",").Split(new []{','}).Length);
