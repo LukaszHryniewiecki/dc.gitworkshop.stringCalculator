@@ -7,7 +7,7 @@
             string result = "";
             for (int i = 0; i < count; i++)
             {
-                result += "0,";
+                result += "0" + delimiter;
             }
             if(result.Length!=0)
                 return result.Substring(0, result.Length - 1);
