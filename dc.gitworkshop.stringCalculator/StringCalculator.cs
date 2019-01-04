@@ -50,12 +50,20 @@ namespace dc.gitworkshop.stringCalculator
             {
                 bool resParse;
                 int number;
-                 resParse = Int32.TryParse(numberString, out number );
+                resParse = Int32.TryParse(numberString, out number);
                 if (!resParse)
                     return "0";
-                if (number < 0)
+                else if (number < 0)
                 {
-                    return  "negatives not allowed";
+                    return "negatives not allowed";
+                }
+                else if (number >= 1500)
+                {
+                    return "numbers greater than 1500 not allowed";
+                }
+                else if (number >= 1000)
+                {
+                    continue;
                 }
 
                 result += number;
