@@ -21,11 +21,47 @@ namespace dc.gitworkshop.stringCalculator
         {
             error = null;
             return true;
+
+
+            int result = 0;
+            String[] separators = new[] { ",", "\n"};
+            String[] numbers = input.Split(separators, StringSplitOptions.None);
+            foreach (String numberString in numbers)
+            {
+                int number = Int32.Parse(numberString);
+                if (number < 0 )
+                {
+                    error = "negatives not allowed";
+                    return false;
+                }
+            }
+            return true;
         }
 
         private static string Sum(string input)
         {
-            return "0";
+            if (input.Length <= 0)
+                return "0";
+
+            int result = 0;
+            String[] separators = new[] { ",", "\n" };
+            String[] numbers = input.Split(separators, StringSplitOptions.None);
+            foreach (String numberString in numbers)
+            {
+                bool resParse;
+                int number;
+                 resParse = Int32.TryParse(numberString, out number );
+                if (!resParse)
+                    return "0";
+                if (number < 0)
+                {
+                    return  "negatives not allowed";
+                }
+
+                result += number;
+            }
+            return result.ToString();
         }
+
     }
 }
