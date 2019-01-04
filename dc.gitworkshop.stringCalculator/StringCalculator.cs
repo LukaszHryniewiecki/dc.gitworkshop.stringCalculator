@@ -24,7 +24,7 @@ namespace dc.gitworkshop.stringCalculator
 
 
             int result = 0;
-            String[] separators = new[] { ",", "\n"};
+            String[] separators = new[] { ",", "\n", ">"};
             String[] numbers = input.Split(separators, StringSplitOptions.None);
             foreach (String numberString in numbers)
             {
